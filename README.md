@@ -211,7 +211,7 @@ react-native start --reset-cache
 
 ---
 
-<h2>Reactotron<h2>
+<h2>Reactotron</h2>
 
 - Para utilizar como debug:
 
@@ -375,3 +375,94 @@ yarn add styled-components
 - No caso só pode ser utilizado components do Native, e ainda é necessário estilizar component por component não pode ser encadeado.
 
 - A vantagem é que consigo utilizar o css normal como na web.
+
+---
+
+- Instalar a dependencia:
+
+```bash
+yarn add react-native-vector-icons
+```
+
+**Para IOS**
+
+- Para funcionar no IOS é necessário realizar alguns passos a mais:
+
+- ir na documentação da lib [Vector Icons](https://github.com/oblador/react-native-vector-icons)
+
+- ir em Instalations > iOS [iOS](https://github.com/oblador/react-native-vector-icons#ios)
+
+- Procurar por "List of all available fonts to copy & paste in info.plist" haverá algo como isso:
+
+```xml
+<key>UIAppFonts</key>
+<array>
+  <string>AntDesign.ttf</string>
+  <string>Entypo.ttf</string>
+  <string>EvilIcons.ttf</string>
+  <string>Feather.ttf</string>
+  <string>FontAwesome.ttf</string>
+  <string>FontAwesome5_Brands.ttf</string>
+  <string>FontAwesome5_Regular.ttf</string>
+  <string>FontAwesome5_Solid.ttf</string>
+  <string>Foundation.ttf</string>
+  <string>Ionicons.ttf</string>
+  <string>MaterialIcons.ttf</string>
+  <string>MaterialCommunityIcons.ttf</string>
+  <string>SimpleLineIcons.ttf</string>
+  <string>Octicons.ttf</string>
+  <string>Zocial.ttf</string>
+</array>
+```
+
+- No projeto localizar a pasta `ios/NOME_DO_PROJETO/info.plist` antes da tag `</dict>`, e escolher as fontes que irá utilizar e descartar as outras.
+
+- Depois acessar a pasta `ios/` e executar o comando:
+
+```bash
+pod install
+```
+
+- E para efetivar as alterações executar o comando:
+
+```
+react-native run-ios
+```
+
+**/Para IOS**
+
+---
+
+**Para android**
+
+- Acessar na documentação [Android](https://github.com/oblador/react-native-vector-icons#android)
+
+- Acessar o arquivo `android/app/build.gradle` adicionar o seguinte no final do arquivo:
+
+```js
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf' ] // Name of the font files you want to copy
+]
+
+apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+```
+
+- em `iconFontNames` inserir as fontes que serão utilizadas.
+
+e por fim executar o comando:
+
+```bash
+react-native run-android
+```
+
+**/Para android**
+
+- Para utilizar os icones importar no arquivo o seguinte:
+
+```js
+import Icon from 'react-native-vector-icons/MaterialIcons';
+```
+
+- Para saber qual icone utilizar, veja a documentação:
+
+[react-native-vector-icons directory](https://oblador.github.io/react-native-vector-icons/)
