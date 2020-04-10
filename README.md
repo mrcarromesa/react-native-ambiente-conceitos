@@ -405,6 +405,7 @@ yarn add react-native-vector-icons
   <string>FontAwesome5_Brands.ttf</string>
   <string>FontAwesome5_Regular.ttf</string>
   <string>FontAwesome5_Solid.ttf</string>
+  <string>FontAwesome5Free-Solid.ttf</string>
   <string>Foundation.ttf</string>
   <string>Ionicons.ttf</string>
   <string>MaterialIcons.ttf</string>
@@ -466,3 +467,23 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 - Para saber qual icone utilizar, veja a documentação:
 
 [react-native-vector-icons directory](https://oblador.github.io/react-native-vector-icons/)
+
+---
+
+<h2>Para executar esse projeto utilizar os seguintes comandos:</h2>
+
+- Para baixar as dependencias:
+
+```bash
+yarn
+```
+
+- Para baixar as dependeicas no ios:
+  - acessar a pasta ios
+  - executar o comando:
+
+```bash
+pod install
+```
+
+
